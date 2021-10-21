@@ -1,6 +1,6 @@
 //aggiungere card all html con js
 //richimo il div contenitore delle card in una variabile
-const cardContainer = document.querySelector(".team-container");
+let cardContainer = document.querySelector(".team-container");
 console.log(cardContainer);
 
 //creo array con oggetto ogni membro del team coi loro dati (chiavi[nome ruolo e src foto])
@@ -37,15 +37,17 @@ let arrUtenti = [
     },
 
 ];
-
+console.log(arrUtenti);
 //faccio una funz per fare ciclere gli utenti
 //faccio ciclare gli ut
 // e salvo il nome il ruolo e img in 3 variabili
 cardGenerator();
 
+
 function cardGenerator() {
     for (i = 0; i < arrUtenti.length; i++) {
         let Utente1 = arrUtenti[i];
+
         //console.log(Utente1);
         Utente1.nome;
         //console.log(Utente1.nome);
@@ -92,10 +94,14 @@ btnAdd.addEventListener("click", function () {
     console.log(ruoloNewUt.value);
     console.log(imgNewUt.value);
     let newUtente = {
-        nome: "nomeNewUt",
-        ruolo: "ruoloNewUt",
-        urlImg: "imgNewUt",
+        nome: nomeNewUt.value,
+        ruolo: ruoloNewUt.value,
+        urlImg: imgNewUt.value,
     };
     arrUtenti.push(newUtente);
+    console.log(arrUtenti);
+    //invoco la funz per generare il nuovo utente
+    cardContainer.innerHTML = "";
+    cardGenerator();
 });
 //aggiungere le 3 variabili nel array facendo così si genererà in modo automatico con la funz cardGenerator
