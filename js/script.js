@@ -31,9 +31,9 @@ let arrUtenti = [
         urlImg: "scott-estrada-developer.jpg",
     },
     {
-        nome: "Angela Caroll",
-        ruolo: "Chief Editor",
-        urlImg: "angela-caroll-chief-editor.jpg",
+        nome: "Barbara Ramos",
+        ruolo: "Graphic Designer",
+        urlImg: "barbara-ramos-graphic-designer.jpg",
     }
 ];
 
