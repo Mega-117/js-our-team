@@ -41,38 +41,41 @@ console.log(arrUtenti);
 //faccio una funz per fare ciclere gli utenti
 //faccio ciclare gli ut
 // e salvo il nome il ruolo e img in 3 variabili
-cardGenerator();
+cardArray();
 
 
-function cardGenerator() {
+function cardArray() {
     for (i = 0; i < arrUtenti.length; i++) {
         let Utente1 = arrUtenti[i];
 
         //console.log(Utente1);
-        Utente1.nome;
+        utNome = Utente1.nome;
         //console.log(Utente1.nome);
-        Utente1.ruolo;
+        utRuolo = Utente1.ruolo;
         //console.log(Utente1.ruolo);
-        Utente1.urlImg;
+        utImg = Utente1.urlImg;
         //console.log(Utente1.urlImg);
-
+        oneCardGeneretor(utNome, utRuolo, utImg);
         //creo la variabile della carta dove inserire il codice html
         //  -sosttituisco i dati della cella con i dati per ogni utente.
         //inserico tutto nel html
 
-        let card = `<div class="team-card">
-        <div class="card-image">
-        <img src="img/${Utente1.urlImg}" alt="Wayne Barnett" />
-        </div>
-        <div class="card-text">
-        <h3>${Utente1.nome}</h3>
-        <p>${Utente1.ruolo}</p>
-        </div>
-        </div>`;
-        //console.log(card);
-
-        cardContainer.innerHTML += card;
     }
+}
+function oneCardGeneretor(Utnome, Utruolo, UtImg) {
+
+    let card = `<div class="team-card">
+    <div class="card-image">
+    <img src="img/${UtImg}" alt="Wayne Barnett" />
+    </div>
+    <div class="card-text">
+    <h3>${Utnome}</h3>
+    <p>${Utruolo}</p>
+    </div>
+    </div>`;
+    //console.log(card);
+
+    cardContainer.innerHTML += card;
 }
 
 //mettere in ascolto il btn
@@ -83,9 +86,9 @@ btnAdd.addEventListener("click", function () {
     //selezionare i vari box del form
     //ricavare il testo
     //salvare il testo in una costante
-    let nomeNewUt = document.getElementById("name");
-    let ruoloNewUt = document.getElementById("role");
-    let imgNewUt = document.getElementById("image");
+    let nomeNewUt = document.getElementById("name").value;
+    let ruoloNewUt = document.getElementById("role").value;
+    let imgNewUt = document.getElementById("image").value;
     nomeNewUt.value;
     ruoloNewUt.value;
     imgNewUt.value;
@@ -101,7 +104,6 @@ btnAdd.addEventListener("click", function () {
     arrUtenti.push(newUtente);
     console.log(arrUtenti);
     //invoco la funz per generare il nuovo utente
-    cardContainer.innerHTML = "";
-    cardGenerator();
+    oneCardGeneretor(nomeNewUt, ruoloNewUt, imgNewUt);
 });
 //aggiungere le 3 variabili nel array facendo così si genererà in modo automatico con la funz cardGenerator
