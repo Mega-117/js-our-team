@@ -34,36 +34,57 @@ let arrUtenti = [
         nome: "Barbara Ramos",
         ruolo: "Graphic Designer",
         urlImg: "barbara-ramos-graphic-designer.jpg",
-    }
+    },
+
 ];
 
 //faccio una funz per fare ciclere gli utenti
 //faccio ciclare gli ut
 // e salvo il nome il ruolo e img in 3 variabili
+cardGenerator();
 
-for (i = 0; i < arrUtenti.length; i++) {
-    let Utente1 = arrUtenti[i];
-    console.log(Utente1);
-    Utente1.nome;
-    console.log(Utente1.nome);
-    Utente1.ruolo;
-    console.log(Utente1.ruolo);
-    Utente1.urlImg;
-    console.log(Utente1.urlImg);
+function cardGenerator() {
+    for (i = 0; i < arrUtenti.length; i++) {
+        let Utente1 = arrUtenti[i];
+        //console.log(Utente1);
+        Utente1.nome;
+        //console.log(Utente1.nome);
+        Utente1.ruolo;
+        //console.log(Utente1.ruolo);
+        Utente1.urlImg;
+        //console.log(Utente1.urlImg);
 
-    //creo la variabile della carta dove inserire il codice html
-    let card = `<div class="team-card">
-    <div class="card-image">
-      <img src="img/${Utente1.urlImg}" alt="Wayne Barnett" />
-    </div>
-    <div class="card-text">
-      <h3>${Utente1.nome}</h3>
-      <p>${Utente1.ruolo}</p>
-    </div>
-  </div>`;
-    console.log(card);
+        //creo la variabile della carta dove inserire il codice html
+        //  -sosttituisco i dati della cella con i dati per ogni utente.
+        //inserico tutto nel html
 
-    cardContainer.innerHTML += card;
+        let card = `<div class="team-card">
+        <div class="card-image">
+        <img src="img/${Utente1.urlImg}" alt="Wayne Barnett" />
+        </div>
+        <div class="card-text">
+        <h3>${Utente1.nome}</h3>
+        <p>${Utente1.ruolo}</p>
+        </div>
+        </div>`;
+        //console.log(card);
+
+        cardContainer.innerHTML += card;
+    }
 }
-//  -sosttituisco i dati della cella con i dati per ogni utente.
-//inserico tutto nel html
+
+//mettere in ascolto il btn
+let btnAdd = document.getElementById("addMemberButton");
+console.log(btnAdd);
+btnAdd.addEventListener;
+//selezionare i vari box del form
+let nomeNewUt = document.getElementById("name");
+let ruoloNewUt = document.getElementById("role");
+let imgNewUt = document.getElementById("image");
+//
+console.log(nomeNewUt);
+console.log(ruoloNewUt);
+console.log(imgNewUt);
+//ricavare il testo
+//salvare il testo in una costante
+//aggiungere le 3 variabili nel array facendo così si genererà in modo automatico con la funz cardGenerator
