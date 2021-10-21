@@ -76,15 +76,26 @@ function cardGenerator() {
 //mettere in ascolto il btn
 let btnAdd = document.getElementById("addMemberButton");
 console.log(btnAdd);
-btnAdd.addEventListener;
-//selezionare i vari box del form
-let nomeNewUt = document.getElementById("name");
-let ruoloNewUt = document.getElementById("role");
-let imgNewUt = document.getElementById("image");
-//
-console.log(nomeNewUt);
-console.log(ruoloNewUt);
-console.log(imgNewUt);
-//ricavare il testo
-//salvare il testo in una costante
+btnAdd.addEventListener("click", function () {
+
+    //selezionare i vari box del form
+    //ricavare il testo
+    //salvare il testo in una costante
+    let nomeNewUt = document.getElementById("name");
+    let ruoloNewUt = document.getElementById("role");
+    let imgNewUt = document.getElementById("image");
+    nomeNewUt.value;
+    ruoloNewUt.value;
+    imgNewUt.value;
+    //
+    console.log(nomeNewUt.value);
+    console.log(ruoloNewUt.value);
+    console.log(imgNewUt.value);
+    let newUtente = {
+        nome: "nomeNewUt",
+        ruolo: "ruoloNewUt",
+        urlImg: "imgNewUt",
+    };
+    arrUtenti.push(newUtente);
+});
 //aggiungere le 3 variabili nel array facendo così si genererà in modo automatico con la funz cardGenerator
