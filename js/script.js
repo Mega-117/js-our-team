@@ -41,36 +41,36 @@ console.log(arrUtenti);
 //faccio una funz per fare ciclere gli utenti
 //faccio ciclare gli ut
 // e salvo il nome il ruolo e img in 3 variabili
-cardArray();
 
 
-function cardArray() {
-    for (i = 0; i < arrUtenti.length; i++) {
-        let Utente1 = arrUtenti[i];
 
-        //console.log(Utente1);
-        utNome = Utente1.nome;
-        //console.log(Utente1.nome);
-        utRuolo = Utente1.ruolo;
-        //console.log(Utente1.ruolo);
-        utImg = Utente1.urlImg;
-        //console.log(Utente1.urlImg);
-        oneCardGeneretor(utNome, utRuolo, utImg);
-        //creo la variabile della carta dove inserire il codice html
-        //  -sosttituisco i dati della cella con i dati per ogni utente.
-        //inserico tutto nel html
 
-    }
+for (i = 0; i < arrUtenti.length; i++) {
+    let Utente1 = arrUtenti[i];
+
+    //console.log(Utente1);
+    utNome = Utente1.nome;
+    //console.log(Utente1.nome);
+    utRuolo = Utente1.ruolo;
+    //console.log(Utente1.ruolo);
+    utImg = Utente1.urlImg;
+    //console.log(Utente1.urlImg);
+    oneCardGeneretor(utNome, utRuolo, utImg);
+    //creo la variabile della carta dove inserire il codice html
+    //  -sosttituisco i dati della cella con i dati per ogni utente.
+    //inserico tutto nel html
+
 }
-function oneCardGeneretor(Utnome, Utruolo, UtImg) {
+
+function oneCardGeneretor(nome, ruolo, img) {
 
     let card = `<div class="team-card">
     <div class="card-image">
-    <img src="img/${UtImg}" alt="Wayne Barnett" />
+    <img src="img/${img}" alt="Wayne Barnett" />
     </div>
     <div class="card-text">
-    <h3>${Utnome}</h3>
-    <p>${Utruolo}</p>
+    <h3>${nome}</h3>
+    <p>${ruolo}</p>
     </div>
     </div>`;
     //console.log(card);
